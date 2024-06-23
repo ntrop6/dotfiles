@@ -1,6 +1,7 @@
 # dotfiles for hyprland
 files containing dots
-![2024-06-23-164944_hyprshot](https://github.com/sfluby/dotfiles/assets/80453846/e26e032b-1c9b-44ed-a26e-2ac234905b40)
+![Uploading 2024-06-23-175156_hyprshot.png…]()
+
 
 yay -S hyprland-git hyprpaper waybar
 
