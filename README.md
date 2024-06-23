@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles for hyprland
 files containing dots
 
 yay -S hyprland-git hyprpaper waybar
