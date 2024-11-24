@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+echo "everything seems to be fine, configuring!"
+cd ~/
+sudo mkdir clones
+cd clones/
+sudo git clone https://github.com/ntrop6/dotfiles.git
+sudo 'cp' -rf ~/clones/dotfiles/*  ~/.config/ && echo "
+configured succesfully..?"
