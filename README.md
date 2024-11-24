@@ -1,11 +1,10 @@
 # dotfiles for hyprland
-files containing dots
+files with dots?
 
 
 
 packages in use:
-waybar steam hyprland-git fcitx5 kitty thunar firefox hyprpaper discord-canary spotify fish 
-(also jetbrains fonts)
+waybar hyprland hyprshot hyprpaper jetbrains mono font kitty fish
 
 waybar config taken from: https://github.com/JoshM-Yoru/dotfiles/
 
