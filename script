@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-yay -Syu --noconfirm fish vesktop hyprland hyprshot fastfetch grim slurp hyprshot hyprpolkitagent spotify spicetify-cli betterbird keepassxc steam waybar fcitx5 nautilus hyprpaper ttf-jetbrains-mono-nerd && exec ./setup.sh || read -p "error occured! you might wanna check whats goin' on. continue anyway? (Y/N) " -n 1 -r
+yay -Syu --noconfirm fish vesktop hyprland hyprshot fastfetch grim slurp hyprshot hyprpolkitagent spotify spicetify-cli betterbird keepassxc steam waybar fcitx5 nautilus hyprpaper ttf-jetbrains-mono-nerd && exec ./install || read -p "error occured! you might wanna check whats goin' on. continue anyway? (Y/N) " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
    cd ~/
    sudo mkdir clones
