@@ -106,7 +106,7 @@
         "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "systemctl restart NetworkManager",
+        "on-click": "kitty -e 'nmtui'",
     },
     "network#vpn": {
         "interface": "tun0",
@@ -179,21 +179,71 @@
         "scroll-step": 5
     },
 
+    // to use the weather module replace <your_location> with your city or town
+    // note: do not use spaces: new york would be newyork
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh tampa", 
+        "return-type": "json",
+        "interval": 600,
+    },
+
     "tray": {
         "icon-size": 14,
         "spacing":10,
      },
 
+    "backlight#icon": {
+        "format": "{icon}",
+        "format-icons": [""],
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+
+    "backlight#value" :{
+         "format": "{percent}%",
+         "on-scroll-down": "brightnessctl -c backlight set 1%-",
+         "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+
+    "custom/firefox": {
+        "format": " ",
+        "on-click": "exec firefox",
+        "tooltip": false
+    },
+
+    "custom/terminal": {
+        "format": " ",
+        "on-click": "exec kitty",
+        "tooltip": false
+    },
+
+    "custom/files": {
+        "format": " ",
+        "on-click": "exec nautilus",
+        "tooltip": false
+    },
+
+    "custom/launcher": {
+        "format":" ",
+        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "tooltip": false,
+    },
+
+    "custom/power": {
+        "format":"⏻",
+        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false,
+    },
+
     "custom/media": {
-        "format": "{0} {1}",
+        "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,
-        "on-click": "playerctl play-pause",
         "format-icons": {
             "spotify": "",
             "default": "󰗃"
         },
         "escape": true,
-        "exec": "python3 $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null"
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
     }
 }
