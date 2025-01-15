@@ -65,7 +65,7 @@
     "clock": {
         "interval": 10,
         // "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-        "format": "{:%e %b %Y %H:%M} ",
+        "format": "{:%e %b %Y %I:%M}",
         "tooltip-format": "{:%e %B %Y}"
     },
 
@@ -76,24 +76,13 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "kitty -e 'btm'",
-    },
-
-    "custom/keyboard-layout": {
-        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        // Interval set only as a fallback, as the value is updated by signal
-        "interval": 30,
-        "format": "  {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-        "signal": 1, // SIGHUP
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+        "on-click": "kitty -e 'htop'",
     },
 
     "memory": {
         "interval": 5,
         "format": "  {}%", // Icon: memory
-        "on-click": "kitty -e 'btm'", 
+        "on-click": "kitty -e 'htop'", 
         "states": {
             "warning": 70,
             "critical": 90
@@ -103,7 +92,7 @@
     "network": {
         "interval": 5,
         "format-wifi": " ", // Icon: wifi
-        "format-ethernet": " ", // Icon: ethernet
+        "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "systemctl restart NetworkManager",
@@ -179,6 +168,7 @@
         "scroll-step": 5
     },
 
+
     "tray": {
         "icon-size": 14,
         "spacing":10,
@@ -187,12 +177,11 @@
     "custom/media": {
         "format": "{0} {1}",
         "return-type": "json",
-        "max-length": 40,
-        "on-click": "playerctl play-pause",
-        "format-icons": {
-            "spotify": "",
-            "default": "󰗃"
-        },
+        "max-length": 50,
+   	"on-click": "playerctl play-pause",
+   	"on-click-right": "pavucontrol",
+   		"on-scroll-up": "playerctl next",
+   		"on-scroll-down": "playerctl previous",
         "escape": true,
         "exec": "python3 $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null"
     }
