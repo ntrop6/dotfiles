@@ -45,7 +45,7 @@ Arc-Dark Color Scheme
     border-radius: 0;
     background-color: transparent;
     min-height: 0;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     font-size: 96%;
     color: #FFFFFF;
@@ -59,7 +59,7 @@ window#waybar {
     /* background-color: rgba(8,0,37,0.85); */
     background-color: transparent;
     /* font-family: JetBrains Mono Nerd Font; */
-    font-family: "JetBrainsMono Nerd Font" ;
+    font-family: "JetBrainsMono Nerd Font";
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
     font-size: 96%;
     margin-top: 0px;
@@ -187,10 +187,10 @@ window {
     border-radius: 20px 0 0 20px;
 }
 
-/* #pulseaudio.muted { */
-/*     color: #ff4499; */
-/* } */
-/**/
+#pulseaudio.muted {
+     color: #d7d7d7;
+}
+
 #pulseaudio.microphone {
     border-left: 0px;
     border-right: 0px;
@@ -219,7 +219,6 @@ window {
 
 #workspaces {
     font-size:16px;
-    background-color: rgba(0,0,0,0.8);
     border-radius: 20px;
 }
 
