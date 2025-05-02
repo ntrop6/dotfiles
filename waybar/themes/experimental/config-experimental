@@ -2,9 +2,9 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","custom/pacman","custom/media"],
+        "modules-left": ["custom/notification","clock","custom/pacman","tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["tray","group/expand","network","pulseaudio","battery"],
+        "modules-right": ["group/expand","bluetooth","network","battery"],
 
 
         "hyprland/workspaces": {
@@ -25,7 +25,7 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%I:%M %p}",
+            "format": "{:%I:%M:%S %p} ",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -39,33 +39,26 @@
             }
         },
         "network": {
-        "interval": 5,
-        "format-wifi": " ", // Icon: wifi
-        "format-ethernet": " ", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "systemctl restart NetworkManager",
-    },
-    "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": " ",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "וֹ",
-            "headset": "  ",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [" "]
+            "format-wifi": "",
+            "format-ethernet":"",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "kitty nmtui"
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-    },
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias} 󰂯",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager",
+        }, 
         "battery": {
             "interval":30,
             "states": {
@@ -87,11 +80,11 @@
             ],
         },
         "custom/pacman": {
-            "format": "󰅢  {}",
+            "format": "󰅢 {}",
             "interval": 30,   
             "exec": "checkupdates | wc -l",
             "exec-if": "exit 0",
-            "on-click": "ghostty -e yay -Syyu --noconfirm; pkill -SIGRTMIN+8 waybar",
+            "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
             "signal": 8,
             "tooltip": false,
         },
@@ -100,7 +93,7 @@
             "tooltip": false
         },
         "custom/endpoint":{
-            "format": " | ",
+            "format": "|",
             "tooltip": false
         },
         "group/expand": {
@@ -135,4 +128,5 @@
             "icon-size": 14,
             "spacing": 10
         },
-}
+} 
+
