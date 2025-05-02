@@ -5,7 +5,7 @@ files with dots?
 download both script and install and run "script" for automated installation. not guaranteed to work since i have no idea what i'm doing, git and yay are required though.
 
 packages in use:
-waybar hyprland hyprshot hyprpaper jetbrains mono font kitty fish
+waybar hyprland hyprshot hyprpaper jetbrains mono font ghostty fish & other dependencies
 
 waybar config taken from: https://github.com/JoshM-Yoru/dotfiles/
 
