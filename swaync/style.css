@@ -1,4 +1,4 @@
-@import url('../../.cache/wal/colors-waybar.css');
+@import url('/home/ntrop/colors-waybar');
 @define-color mpris-album-art-overlay alpha(@background, 0.55);
 @define-color mpris-button-hover alpha(@background, 0.50);
 @define-color text @color15;
@@ -6,6 +6,7 @@
 @define-color bg-hover alpha(@background,.8);
 @define-color mycolor @color9;
 @define-color border-color alpha(@mycolor, 0.15);
+@define-color black rgb(0, 0, 0);
 
 @keyframes fadeIn{
 0% {
@@ -30,18 +31,16 @@
 .floating-notifications.background .notification-background .notification .notification-content {
 }
 .notification{
-    background: alpha(@mycolor,.5);
+     background: alpha(@black,.6);
 
 }
-
 .control-center .notification-row .notification-background .notification {
     margin-top: 0.150rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
-    background: alpha(@mycolor,.3);
-
+    background: alpha(@black,.3);
 }
 .floating-notifications .notification{
-    animation: fadeIn .5s ease-in-out;
+    animation: fadeIn .2s ease-in-out;
 }
 
 .control-center .notification-row .notification-background .notification box,
@@ -54,7 +53,7 @@
 
 }
 .notification widget:hover{
-    background:alpha(@mycolor,.2);
+    background:alpha(@mycolor,.3);
 }
 .floating-notifications.background .notification-background .notification .notification-content,
 .control-center .notification-background .notification .notification-content {
@@ -109,7 +108,7 @@
 }
 .control-center .notification-row .notification-background .notification .notification-content .summary,
 .floating-notifications.background .notification-background .notification .notification-content .summary {
-    font-family: 'CodeNewRoman Nerd Font Propo';
+    font-family: 'JetBrainsMono NF ExtraBold';
     font-size: 0.9909rem;
     font-weight: 500;
 }
@@ -124,7 +123,7 @@
 
 .control-center .notification-row .notification-background .notification .notification-content .body,
 .floating-notifications.background .notification-background .notification .notification-content .body {
-    font-family: 'CodeNewRoman Nerd Font Propo';
+    font-family: 'JetBrainsMono NF ExtraBold';
     font-size: 0.8891rem;
     font-weight: 400;
     margin-top: 0.310rem;
