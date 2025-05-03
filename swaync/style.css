@@ -1,4 +1,4 @@
-@import url('/home/ntrop/colors-waybar');
+@import url('../../.config/colors');
 @define-color mpris-album-art-overlay alpha(@background, 0.55);
 @define-color mpris-button-hover alpha(@background, 0.50);
 @define-color text @color15;
@@ -167,7 +167,7 @@
 }
 
 .control-center {
-    background: @bg;
+    background: alpha(@black,.8);
     color: @text;
     border-radius: 10px;
     border:none;

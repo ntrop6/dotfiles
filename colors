@@ -1,0 +1,3 @@
+@define-color background #000000;
+@define-color color0 #ffffff;
+@define-color color9 #ffffff;
