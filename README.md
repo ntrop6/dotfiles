@@ -1,6 +1,6 @@
 # dotfiles
 
-![image](https://github.com/user-attachments/assets/afdcb048-54fe-4bc4-8e4b-cdeffc6d5feb)
+![2025-05-05-235151_hyprshot](https://github.com/user-attachments/assets/911f51cf-e70b-4204-92c6-ec94979147f3)
 
 
 "script.sh" for automated installation
