@@ -1,4 +1,4 @@
-890511#!/bin/bash
+#!/bin/bash
 
 echo "Installing packages..."
 if yay -Syyu --noconfirm fish vesktop hyprland hyprshot fastfetch grim slurp hyprpolkitagent spotify spicetify-cli betterbird-bin keepassxc steam waybar nautilus hyprpaper ghostty ttf-jetbrains-mono-nerd; then
