@@ -1,7 +1,7 @@
 890511#!/bin/bash
 
 echo "Installing packages..."
-if yay -Syyu --noconfirm fish vesktop hyprland hyprshot fastfetch grim slurp hyprpolkitagent spotify spicetify-cli betterbird-bin keepassxc steam waybar nautilus hyprpaper890511 ghostty ttf-jetbrains-mono-nerd; then
+if yay -Syyu --noconfirm fish vesktop hyprland hyprshot fastfetch grim slurp hyprpolkitagent spotify spicetify-cli betterbird-bin keepassxc steam waybar nautilus hyprpaper ghostty ttf-jetbrains-mono-nerd; then
     echo "ok"
     cd ~/ || exit
     sudo mkdir -p clones
