@@ -1,55 +1,69 @@
-@import url('../../.config/colors');
+@import url('../../.config/waybar/colors.css');
 
 * {
-    font-size:14px;
-    font-family: "JetBrains Mono Nerd";
 }
 window#waybar{
     all:unset;
 }
 .modules-left {
-    padding:7px;
+    padding:5px;
     margin:9 0 6 10;
-    border-radius:10px;
-    background: alpha(@background,.6);
+    border-radius:20px;
+    color: @outline;
+    background-color: alpha(@background, .70);;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    min-height: 0;
 }
 .modules-center {
-    padding:7px;
+    padding:3px;
     margin:9 0 6 10;
-    border-radius:10px;
-    background: alpha(@background,.6);
+    border-radius:20px;
+    background-color: alpha(@background, .70);;
+    color: @error;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: bolder;
+    min-height: 0px;
+    letter-spacing: -10px;
+    font-size: 110%;
 }
 .modules-right {
     padding:7px;
     margin: 9 10 6 10;
-    border-radius:10px;
-    background: alpha(@background,.6);
+    border-radius:20px;
+    color: @primary;
+    background-color: alpha(@background, .70);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
+
 tooltip {
     background:@background;
-    color: @color7;
+    color: @inverse_surface;
 }
 #clock:hover, #custom-pacman:hover, #custom-notification:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
-    color:@color9;
+    color: @primary;
 }
 #custom-notification {
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@inverse_surface;
 }
 #clock{
     padding: 0px 10px;
-    color:@color7;
+    color: @inverse_surface;
     transition: all .3s ease;
 }
 #custom-pacman{
     padding: 0px 10px;
     transition: all .3s ease;
-    color:@color7;
+    color:@inverse_surface;
 
 }
 #workspaces {
@@ -58,33 +72,33 @@ tooltip {
 #workspaces button {
     all:unset;
     padding: 0px 5px;
-    color: alpha(@color9,.4);
+    color: alpha(@primary, .3);
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
+    color: @primary;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
+    transition: all .2s ease;
 }
 #workspaces button.active {
-    color: @color9;
+    color: @primary;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #workspaces button.empty {
-    color: rgba(0,0,0,0);
+    color: alpha(@primary_container, .01);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
+    color: @primary;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
+    transition: all 150ms ease;
 }
 #workspaces button.empty.active {
-    color: @color9;
+    color: @primary;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -92,23 +106,29 @@ tooltip {
 #network{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@inverse_surface;
 
 }
 #pulseaudio{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@inverse_surface;
 
 }
+#pulseaudio:hover {
+    color:@primary
+}
+
 #custom-media{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
-
+    color:@inverse_surface;
+}
+#custom-media:hover{
+    color:@primary
 }
 #pulseaudio.muted {
-     color: #ff7b7b;
+     color: @error;
 }
 
 #group-expand{
@@ -117,12 +137,12 @@ tooltip {
 }
 #custom-expand{
     padding: 0px 5px;
-    color:alpha(@foreground,.2);
+    color:@inverse_surface;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
     transition: all .3s ease; 
 }
 #custom-expand:hover{
-    color:rgba(255,255,255,.2);
+    color:@primary;
     text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
 }
 #custom-colorpicker{
@@ -131,12 +151,16 @@ tooltip {
 #cpu,#memory,#temperature{
     padding: 0px 5px;
     transition: all .3s ease; 
-    color:@color7;
+    color:@inverse_surface;
 
 }
+#memory:hover{
+    color:@primary
+}
+
 #custom-endpoint{
     color:transparent;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 1.5px rgba(255, 266, 255, 1);
 
 }
 #tray{
@@ -158,15 +182,15 @@ tooltip {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    color: #FFFFFF;
+    color: @inverse_surface;
 }
 
 #memory.warning {
-    color: orange;
+    color: @error;
  }
 
 #memory.critical {
-    color: red;
+    color: @error_container;
     animation-name: blink-critical;
     animation-duration: 2s;
     padding-left:5px;
