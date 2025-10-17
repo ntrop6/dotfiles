@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","custom/endpoint","custom/media"],
+        "modules-left": ["custom/notification","clock","custom/media"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["network","custom/vpn","memory","pulseaudio","battery","group/expand"],
         "hyprland/workspaces": {
@@ -85,10 +85,6 @@
             "󰁹"
             ],
         },
-        "custom/endpoint":{
-            "format": "|",
-            "tooltip": false
-        },
        "memory": {
             "interval": 5,
             "format": " {}%", // Icon: memory
@@ -127,10 +123,6 @@
             "critical-threshold": 80,
             "format": "",
         },
-        "custom/endpoint":{
-            "format": " | ",
-            "tooltip": false
-        },
         "custom/expand": {
             "format": "",
             "tooltip": false
@@ -143,8 +135,8 @@
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous",
         "format-icons": {
-            "spotify": "",
-            "default": "󰗃",
+            "spotify": "|  ",
+            "default": "|  󰗃",
         },
         "escape": true,
         "exec": "python3 $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null"
@@ -159,8 +151,8 @@
         "disconnected": "󰦞 ",
     },
     "tooltip-format": "{text}",
-    "on-click": "[[ $(nmcli -t -f NAME,TYPE con show --active) == *riseup-ovpn:vpn* ]] && (nmcli con down id riseup-ovpn && nmcli con up id riseup-ovpn) || nmcli con up id riseup-ovpn; pkill -RTMIN+10 waybar",
-    "on-click-right": "nmcli con down id riseup-ovpn && pkill -RTMIN+10 waybar",
+    "on-click": "systemctl disable --now openvpn.service",
+    "on-click-right": "systemctl enable --now openvpn.service",
     "signal": 10
-    }
+    },
 }
