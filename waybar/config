@@ -151,8 +151,8 @@
         "disconnected": "󰦞 ",
     },
     "tooltip-format": "{text}",
-    "on-click": "systemctl disable --now openvpn.service",
-    "on-click-right": "systemctl enable --now openvpn.service",
+    "on-click": "systemctl enable --now openvpn.service",
+    "on-click-right": "systemctl disable --now openvpn.service",
     "signal": 10
     },
 }
