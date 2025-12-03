@@ -5,4 +5,5 @@ showcase:
 
 
 "script.sh" for automated installation (AINT VERY GOOD RN!!)
+
 I'm still not quite sure on how to rice sway yet so im still working on it goal is to get it out before 2026 or smth idfk same for the script
