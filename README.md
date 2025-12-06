@@ -1,9 +1,9 @@
 # dotfiles
 
 showcase:
-<img width="1920" height="1081" alt="2025-10-17-194310_hyprshot" src="https://github.com/user-attachments/assets/0e02d179-805a-4775-995d-5255f5897644" />
+<img width="1920" height="1080" alt="2025-12-06-183454_hyprshot" src="https://github.com/user-attachments/assets/22bf6c64-5bb4-47ec-bc77-b52d4b89bc50" />
+<img width="1920" height="1080" alt="2025-12-06-180349_hyprshot" src="https://github.com/user-attachments/assets/1967f278-87d9-44a4-a7bb-88c94b73c35d" />
 
 
-"script.sh" for automated installation (AINT VERY GOOD RN!!)
 
-I'm still not quite sure on how to rice sway yet so im still working on it goal is to get it out before 2026 or smth idfk same for the script
+"script.sh" for automated installation (dont work rn)
