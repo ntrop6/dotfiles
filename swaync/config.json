@@ -1,10 +1,10 @@
 {
+  "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
-	"cssPriority": "user",
-
-  "control-center-width": 380,
-  "control-center-height": 1020,
+  "cssPriority": "user",
+  "control-center-width": 400,
+  "control-center-height": 1030, 
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
   "control-center-margin-right": 1,
@@ -34,14 +34,15 @@
   },
   "notification-visibility": {
     "example-name": {
-      "state": "muted",
+      "state": "visible",
       "urgency": "Low",
       "app-name": "Spotify"
     }
   },
   "widgets": [
-    "label",
     "buttons-grid",
+    "volume",
+    "backlight",
     "mpris",
     "title",
     "dnd",
@@ -56,30 +57,32 @@
     "dnd": {
       "text": "Do not disturb"
     },
-    "label": {
-      "max-lines": 1,
-      "text": " "
-    },
     "mpris": {
-      "image-size": 96,
-      "image-radius": 12
+      "image-size": 120,
+      "image-radius": 20
     },
     "volume": {
-      "label": "󰕾",
-        "show-per-app": true
+      "label": "󰕾 ",
+      "show-per-app": false
+    },
+    "backlight": {
+      "label": "󰃟 ",
+      "device": "amdgpu_bl2"
     },
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
-          "command": "amixer set Master toggle"
+          "label": "󰖁",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+          "type": "toggle"
         },
         {
-          "label": "",
-          "command": "amixer set Capture toggle"
+          "label": "󰍭",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+	  "type": "toggle"
         },
         {
-          "label": " ",
+          "label": "󰤨",
           "command": "nm-connection-editor"
         },
         {
@@ -87,10 +90,30 @@
           "command": "blueman-manager"
         },
         {
-          "label": "󰏘",
+          "label": "",
           "command": "nwg-look"
-        }
-        
+        },
+        { 
+          "label": "󰻂",
+          "command": "obs"
+        },
+	{
+	  "label": "󰌾",
+	  "command": "hyprlock"
+	},
+	{
+	  "label":"󰜉",
+	  "command": "reboot"
+	},
+	{
+	  "label":"󰐥",
+	  "command": "shutdown now"
+	},
+	{
+	  "label":"󰀝",
+	  "command": "bash -c $HOME/.config/hypr/scripts/airplaneMode.sh",
+	  "type": "toggle"
+	}
       ]
     }
   }
