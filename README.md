@@ -7,3 +7,5 @@ showcase:
 
 
 "script.sh" for automated installation (dont work rn)
+
+I've now dropped this whole thing and will only use it for hyprland or other essential things.
